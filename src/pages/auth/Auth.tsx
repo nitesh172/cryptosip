@@ -8,15 +8,23 @@ import { AddUserProps, ExistingUserProps, UserRole } from "types"
 
 const Auth = () => {
   const location = useLocation()
+
+  const navigate = useNavigate()
+
   const { isAuthenticate } = useAppSelector((state) => state.userReducer)
 
-  if(isAuthenticate === null) return null
-  if(isAuthenticate) return <Navigate to="/" replace/> 
+  if (isAuthenticate === null) return null
+  if (isAuthenticate) return <Navigate to="/" replace />
 
   return (
     <div className="h-screen w-screen flex flex-row">
       <div className="hidden lg:flex lg:w-[45%] xl:w-1/2 p-10 bg-[#F2F4F8] flex-col justify-between">
-        <img src={images.Logo} alt="" className="w-20 h-2w-20" />
+        <img
+          src={images.Logo}
+          alt=""
+          className="w-20 h-2w-20 cursor-pointer"
+          onClick={() => navigate("/")}
+        />
         <div className="flex flex-col gap-6">
           <div className="text-lg lg:text-3xl font-semibold">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -26,9 +34,7 @@ const Auth = () => {
           </div>
         </div>
         <div>
-          <div className="w-full h-56 border">
-            {/* Testmonials */}
-          </div>
+          <div className="w-full h-56 border">{/* Testmonials */}</div>
         </div>
       </div>
       {location.pathname === "/login" ? <LoginForm /> : <SignupForm />}
@@ -58,12 +64,12 @@ const LoginForm = () => {
   }
 
   return (
-    <div className="px-6 py-12 md:p-32 lg:p-24 xl:p-44 flex-1 flex flex-col md:justify-center overflow-auto overflow-x-hidden">
+    <div className="px-6 py-12 md:px-32 lg:px-24 xl:px-40 flex-1 flex flex-col md:justify-center lg:overflow-hidden overflow-x-hidden">
       <img
         src={images.Logo}
         onClick={() => navigate("/")}
         alt=""
-        className="w-14 h-14 block lg:hidden mb-6"
+        className="w-14 h-14 block xl:hidden mb-6  cursor-pointer"
       />
       <div className="text-2xl font-semibold mb-3">Welcome back</div>
       <div className="text-base mb-8">Welcome back! Please enter your details.</div>
@@ -132,8 +138,13 @@ const SignupForm = () => {
   }
 
   return (
-    <div className="px-6 py-12 md:p-44 flex-1 flex flex-col md:justify-center overflow-auto overflow-x-hidden">
-      <img src={images.Logo} alt="" onClick={() => navigate("/")} className="w-14 h-14 block xl:hidden mb-6" />
+    <div className="px-6 py-12 md:px-32 lg:px-24 xl:px-40 flex-1 flex flex-col md:justify-center lg:overflow-hidden overflow-x-hidden">
+      <img
+        src={images.Logo}
+        alt=""
+        onClick={() => navigate("/")}
+        className="w-14 h-14 block xl:hidden mb-6  cursor-pointer"
+      />
       <div className="text-2xl font-semibold mb-3">Sign up</div>
       <div className="text-base mb-8">Welcome back! Please enter your details.</div>
       <Textfiled
