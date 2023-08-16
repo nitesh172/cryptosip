@@ -15,8 +15,8 @@ const Auth = () => {
 
   return (
     <div className="h-screen w-screen flex flex-row">
-      <div className="hidden xl:flex xl:w-1/2 p-10 bg-[#F2F4F8] flex-col justify-between">
-        <img src={images.Logo} alt="" className="w-16 h-16" />
+      <div className="hidden lg:flex lg:w-[45%] xl:w-1/2 p-10 bg-[#F2F4F8] flex-col justify-between">
+        <img src={images.Logo} alt="" className="w-20 h-2w-20" />
         <div className="flex flex-col gap-6">
           <div className="text-lg lg:text-3xl font-semibold">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -26,7 +26,9 @@ const Auth = () => {
           </div>
         </div>
         <div>
-          <div className="w-full h-56 border"></div>
+          <div className="w-full h-56 border">
+            {/* Testmonials */}
+          </div>
         </div>
       </div>
       {location.pathname === "/login" ? <LoginForm /> : <SignupForm />}
@@ -56,12 +58,12 @@ const LoginForm = () => {
   }
 
   return (
-    <div className="px-6 py-12 md:p-44 flex-1 flex flex-col md:justify-center overflow-hidden">
+    <div className="px-6 py-12 md:p-32 lg:p-24 xl:p-44 flex-1 flex flex-col md:justify-center overflow-auto overflow-x-hidden">
       <img
         src={images.Logo}
         onClick={() => navigate("/")}
         alt=""
-        className="w-14 h-14 block xl:hidden mb-6"
+        className="w-14 h-14 block lg:hidden mb-6"
       />
       <div className="text-2xl font-semibold mb-3">Welcome back</div>
       <div className="text-base mb-8">Welcome back! Please enter your details.</div>
@@ -130,8 +132,8 @@ const SignupForm = () => {
   }
 
   return (
-    <div className="px-6 py-12 md:p-44 flex-1 flex flex-col md:justify-center overflow-hidden">
-      <img src={images.Logo} alt="" className="w-14 h-14 block xl:hidden mb-6" />
+    <div className="px-6 py-12 md:p-44 flex-1 flex flex-col md:justify-center overflow-auto overflow-x-hidden">
+      <img src={images.Logo} alt="" onClick={() => navigate("/")} className="w-14 h-14 block xl:hidden mb-6" />
       <div className="text-2xl font-semibold mb-3">Sign up</div>
       <div className="text-base mb-8">Welcome back! Please enter your details.</div>
       <Textfiled

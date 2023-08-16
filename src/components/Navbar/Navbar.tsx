@@ -38,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           </NavLink>
         </div>
       </div>
-      {!isAuthenticate && (
+      {isAuthenticate !== null && !isAuthenticate && (
         <div className="hidden sm:flex flex-row gap-4">
           <NavLink to="/login">
             <Button text="Login" className="border-none" />
@@ -51,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           </NavLink>
         </div>
       )}
-      <div className="sm:hidden bg-purple-500 p-1 rounded-lg">
+      <div className="sm:hidden bg-[#0578FF] p-1 rounded-lg">
         <IconButton
           className="text-[16px text-white"
           Icon={<BiMenuAltRight size={24} />}
