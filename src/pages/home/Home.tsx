@@ -1,8 +1,11 @@
-import { Button, Carousel, AirdropCard } from "components"
+import { Button, Carousel, AirdropCard, VideoPlayer } from "components"
 import { BiRightArrowAlt, BiSolidVideos } from "react-icons/bi"
 import { MdFollowTheSigns } from "react-icons/md"
 
 const Home = () => {
+  const video = {
+    sourceUrl: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+  }
   return (
     <div>
       <section className="w-full h-fit bg-gradient-to-t from-white to-[#E2E6EE]">
@@ -51,6 +54,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <div className="p-14">
+        <VideoPlayer video={video} />
+      </div>
       <Carousel
         title="New Airdrops"
         data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}
