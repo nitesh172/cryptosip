@@ -4,6 +4,7 @@ const newAirdrop = [
     name: "BTC",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, perspiciatis voluptas. Doloribus non velit autem maxime ut quod, soluta voluptate perferendis accusantium culpa iusto adipisci quia tempore. Saepe, deserunt vel.",
+    image: "",
     socialLinks: {
       twitter: "https://twitter.com/Bitcoin",
       telegram: "",
@@ -29,5 +30,5 @@ const newAirdrop = [
 ]
 
 export default {
-    newAirdrop
+  newAirdrop,
 }

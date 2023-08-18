@@ -38,17 +38,13 @@ export interface DrawerProps extends PropsWithChildren {
 export interface CarouselProps {
   readonly title: string
   readonly data: any[]
-  readonly renderItem: (item: any, index: number) => React.ReactElement
-}
-
-export interface CarouselCardItemProps {
-  readonly isSnapPoint: boolean
-  readonly children?: React.ReactNode
+  readonly renderItem: (item: any, index: number, isSnapPoint: boolean) => React.ReactElement
 }
 
 export interface AirdropCardProps {
   airdrop: any
   index: number
+  isSnapPoint: boolean
 }
 
 export type AirdropProps = {

@@ -2,7 +2,7 @@ import IconButton from "components/Buttons/IconButton"
 import TextButton from "components/Buttons/TextButton"
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi"
 import { useSnapCarousel } from "react-snap-carousel"
-import { CarouselCardItemProps, CarouselProps } from "types"
+import { CarouselProps } from "types"
 
 const Carousel = (props: CarouselProps) => {
   const { title, data, renderItem } = props
@@ -43,18 +43,11 @@ const Carousel = (props: CarouselProps) => {
         {!!data &&
           !!data.length &&
           data.map((item, index) => (
-            <CarouselCard key={index} isSnapPoint={snapPointIndexes.has(index)}>
-              {renderItem(item, index)}
-            </CarouselCard>
+              renderItem(item, index, snapPointIndexes.has(index))
           ))}
       </div>
     </div>
   )
-}
-
-const CarouselCard = (props: CarouselCardItemProps) => {
-  const { children, isSnapPoint } = props
-  return <div className={`flex-shrink-0 ${isSnapPoint && "snap-start"}`}>{children}</div>
 }
 
 export default Carousel
