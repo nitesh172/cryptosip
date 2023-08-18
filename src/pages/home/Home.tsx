@@ -4,21 +4,21 @@ import { MdFollowTheSigns } from "react-icons/md"
 
 const Home = () => {
   const video = {
-    sources: [
-      {
-        file: "https://vod-progressive.akamaized.net/exp=1692358090~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F680%2F12%2F303404131%2F1161809216.mp4~hmac=2e7ea8ebc7c0a8004672eb3c75bdc2e4a76603d4939c5f1dac946ceb2580560a/vimeo-prod-skyfire-std-us/01/680/12/303404131/1161809216.mp4?filename=file.mp4",
-        label: "720p",
-        type: "mp4",
-      },
-      {
-        file: "https://vod-progressive.akamaized.net/exp=1692358083~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F680%2F12%2F303404131%2F1161809217.mp4~hmac=8090408ec794be116555c980ee4c925b5b3d3721b4c57e5f070e7c76a11aa734/vimeo-prod-skyfire-std-us/01/680/12/303404131/1161809217.mp4?filename=file.mp4",
-        label: "1080p",
-        type: "mp4",
-      },
-    ],
+    // sources: [
+    //   {
+    //     file: "https://vod-progressive.akamaized.net/exp=1692358090~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F680%2F12%2F303404131%2F1161809216.mp4~hmac=2e7ea8ebc7c0a8004672eb3c75bdc2e4a76603d4939c5f1dac946ceb2580560a/vimeo-prod-skyfire-std-us/01/680/12/303404131/1161809216.mp4?filename=file.mp4",
+    //     label: "720p",
+    //     type: "mp4",
+    //   },
+    //   {
+    //     file: "https://vod-progressive.akamaized.net/exp=1692358083~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F680%2F12%2F303404131%2F1161809217.mp4~hmac=8090408ec794be116555c980ee4c925b5b3d3721b4c57e5f070e7c76a11aa734/vimeo-prod-skyfire-std-us/01/680/12/303404131/1161809217.mp4?filename=file.mp4",
+    //     label: "1080p",
+    //     type: "mp4",
+    //   },
+    // ],
     // video: "https://vod-progressive.akamaized.net/exp=1692358083~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F680%2F12%2F303404131%2F1161809217.mp4~hmac=8090408ec794be116555c980ee4c925b5b3d3721b4c57e5f070e7c76a11aa734/vimeo-prod-skyfire-std-us/01/680/12/303404131/1161809217.mp4?filename=file.mp4",
     poster: "https://wallpapercave.com/wp/n9D8rLR.jpg",
-    // sourceUrl: "https://vod-progressive.akamaized.net/exp=1692354836~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4497%2F6%2F172488192%2F556474945.mp4~hmac=44ad7a36152e73c28032280a4b2f8920a9d53a5575833bdec56c91179ded06b4/vimeo-prod-skyfire-std-us/01/4497/6/172488192/556474945.mp4?filename=file.mp4",
+    sourceUrl: "https://vod-progressive.akamaized.net/exp=1692354836~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4497%2F6%2F172488192%2F556474945.mp4~hmac=44ad7a36152e73c28032280a4b2f8920a9d53a5575833bdec56c91179ded06b4/vimeo-prod-skyfire-std-us/01/4497/6/172488192/556474945.mp4?filename=file.mp4",
   }
   return (
     <div>
@@ -74,7 +74,7 @@ const Home = () => {
       <Carousel
         title="New Airdrops"
         data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}
-        renderItem={(airdrop, i) => <AirdropCard key={i} airdrop={airdrop} index={i} />}
+        renderItem={(airdrop, i, isSnapPoint) => <AirdropCard key={i} airdrop={airdrop} index={i} isSnapPoint={isSnapPoint} />}
       />
       {/* <Carousel
             title="Upcoming Airdrops"
