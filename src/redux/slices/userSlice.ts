@@ -1,34 +1,39 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit"
-import { UserProps } from "types"
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { CurrentUserProps, UserProps } from 'types'
 
 export interface AirdropState {
   users: UserProps[]
-  currentUser: UserProps | null
-  isAuthenticate: boolean | null
+  currentUser: CurrentUserProps | null,
+  isAuthenticate: boolean | null,
+  userDetails: UserProps | null
 }
 
 const initialState: AirdropState = {
   users: [],
   currentUser: null,
-  isAuthenticate: null
+  isAuthenticate: null,
+  userDetails: null
 }
 
 export const userSlice = createSlice({
-  name: "airdrops",
+  name: 'users',
   initialState,
   reducers: {
     setUsers: (state, action: PayloadAction<UserProps[]>) => {
       state.users = action.payload
     },
-    setCurrentUser: (state, action: PayloadAction<UserProps | null>) => {
+    setCurrentUser: (state, action: PayloadAction<CurrentUserProps | null>) => {
       state.currentUser = action.payload
     },
     setAuthenticate: (state, action: PayloadAction<boolean | null>) => {
       state.isAuthenticate = action.payload
     },
+    setUserDetails: (state, action: PayloadAction<UserProps | null>) => {
+      state.userDetails = action.payload
+    },
   },
 })
 
-export const { setUsers, setCurrentUser, setAuthenticate } = userSlice.actions
+export const { setUsers, setCurrentUser, setAuthenticate, setUserDetails } = userSlice.actions
 
 export default userSlice.reducer

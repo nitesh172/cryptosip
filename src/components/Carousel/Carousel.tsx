@@ -5,11 +5,11 @@ import { useSnapCarousel } from "react-snap-carousel"
 import { CarouselProps } from "types"
 
 const Carousel = (props: CarouselProps) => {
-  const { title, data, renderItem } = props
+  const { title, data, renderItem, className } = props
   const { scrollRef, pages, activePageIndex, next, prev, snapPointIndexes } = useSnapCarousel()
 
   return (
-    <div className="flex flex-col gap-10 mx-10 lg:mx-16 mt-10 md:mt-20 lg:mt-24 mb-10 md:mb-20 lg:mb-24">
+    <div className={`flex flex-col gap-10 mx-6 md:mx-16 lg:mx-20 xl:mx-24 ${className}`}>
       <div className="flex flex-row justify-between items-center">
         <div className="text-lg md:text-xl lg:text-2xl font-medium">{title}</div>
         <div className="flex flex-row gap-4">
@@ -20,18 +20,18 @@ const Carousel = (props: CarouselProps) => {
               onClick={() => (activePageIndex === 0 ? null : prev())}
               className={`${
                 activePageIndex === 0
-                  ? "opacity-50 cursor-not-allowed hover:border-gray-300"
-                  : "cursor-pointer hover:border-purple-700"
-              } p-1.5 rounded-xl border-2 backdrop-blur-lg bg-white`}
+                  ? "opacity-50 cursor-not-allowed hover:border-gray-300 bg-white"
+                  : "cursor-pointer hover:border-black text-white  bg-black"
+              } p-1.5 border  `}
             />
             <IconButton
               Icon={<BiRightArrowAlt size={24} />}
               onClick={() => (activePageIndex === pages.length - 1 ? null : next())}
               className={`${
                 activePageIndex === pages.length - 1
-                  ? "opacity-50 cursor-not-allowed hover:border-gray-300"
-                  : "cursor-pointer hover:border-purple-700"
-              } p-1.5 rounded-xl border-2 backdrop-blur-lg bg-white`}
+                  ? "opacity-50 cursor-not-allowed hover:border-gray-300 bg-white"
+                  : "cursor-pointer hover:border-black text-white  bg-black"
+              } p-1.5 border `}
             />
           </div>
         </div>

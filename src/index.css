@@ -9,6 +9,10 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+body {
+  background:#FAF9FA;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 6px;
@@ -21,11 +25,10 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 5px;
+  background: #212124;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: black;
 }

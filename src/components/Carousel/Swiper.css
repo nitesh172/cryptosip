@@ -1,0 +1,22 @@
+.mySwiper {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-3d .swiper-slide-shadow {
+  background: none;
+}
+.swiper-3d .swiper-slide-shadow-left {
+  background-image: none;
+}
+.swiper-3d .swiper-slide-shadow-right {
+  background-image: none;
+}
+.swiper-3d .swiper-slide-shadow-top {
+  background-image: none;
+}
+.swiper-3d .swiper-slide-shadow-bottom {
+  background-image: none;
+}

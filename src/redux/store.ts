@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit"
 import airdropSlice from "./slices/airdropSlice"
 import userSlice from "./slices/userSlice"
+import notificationSlice from "./slices/notificationSlice"
 
 export const store = configureStore({
   reducer: {
     airdropReducer: airdropSlice,
-    userReducer: userSlice
+    userReducer: userSlice,
+    notificationReducer: notificationSlice
   },
 })
 // Infer the `RootState` and `AppDispatch` types from the store itself
