@@ -1,23 +1,22 @@
-import { TextfieldProps } from "types"
+import { TextfieldProps } from 'types'
 
 const Textfiled = (props: TextfieldProps) => {
-  const { label, type, value, onChange, className, placeholder, name } = props
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(event)
-  }
+  const { label, className, error, isDisabled, ...otherProps } = props
 
   return (
-    <div className={`flex flex-col gap-1.5 ${className}`}>
-      <div className="text-sm font-medium">{label}</div>
+    <div className={`flex flex-col gap-1.5 relative ${className}`}>
+      {label && <div className='text-sm font-medium'>{label}</div>}
       <input
-        type={type}
-        value={value}
-        name={name}
-        placeholder={placeholder}
-        onChange={handleInputChange}
-        className="border-2 border-gray-200 outline-none text-base py-2.5 px-3.5 rounded-xl hover:border-[#0578FF] focus-within:border-[#0578FF]"
+        {...otherProps}
+        disabled={isDisabled}
+        className={`border w-full h-10 lg:h-auto text-sm md:text-base py-1.5 md:py-2.5 px-2 md:px-3.5 border-gray-200 outline-none  ${
+          !isDisabled && 'hover:border-black'
+        } ${isDisabled && 'text-gray-500'} focus-within:border-black ${
+          error && error !== '' && 'border-[#F04438]'
+        }`}
+        autoComplete='off'
       />
+      {error && error !== '' ? <span className='text-xs text-[#F04438] block'>{error}</span> : null}
     </div>
   )
 }

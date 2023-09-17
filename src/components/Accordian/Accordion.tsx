@@ -5,9 +5,9 @@ import { AccordionProps } from "types"
 const Accordion = (props: AccordionProps) => {
   const { title, children, isOpen } = props
   const [show, setShow] = useState(isOpen ? true : false)
-  const toggleAccordion = () => {
-    setShow(!show)
-  }
+
+  const toggleAccordion = () => setShow(!show)
+
   return (
     <div className="overflow-hidden">
       <div className="flex justify-between font-medium" onClick={toggleAccordion}>
